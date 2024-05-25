@@ -54,8 +54,8 @@ if model_selector=="CatBoost":
     model=CatBoostRegressor(random_state=0, logging_level="Silent")
     model.fit(x,y)
 elif model_selector=="Random Forest":
-    model_c=RandomForestRegressor(random_state=0)
-    model_c.fit(x, y)
+    model=RandomForestRegressor(random_state=0)
+    model.fit(x, y)
 
 with ic2:
     #st.write(f":blue[**Compressive strength = **{model_c.predict(new_sample)[0]:.3f}** MPa**]\n")
