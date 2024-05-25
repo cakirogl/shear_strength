@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler, OrdinalEncoder
 from xgboost.sklearn import XGBRegressor
 from lightgbm.sklearn import LGBMRegressor
 from catboost import CatBoostRegressor
-from sklearn.ensemble import ExtraTreesRegressor
+from sklearn.ensemble import RandomForestRegressor
 
 url = "https://raw.githubusercontent.com/cakirogl/shear_strength/main/dataset.csv"
 model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "CatBoost", "Extra Trees"])
@@ -51,10 +51,10 @@ elif model_selector=="XGBoost":
     model=XGBRegressor(random_state=0)
     model.fit(x, y)
 if model_selector=="CatBoost":
-    model=CatBoostRegressor(random_state=0, verbose=0)
+    model=CatBoostRegressor(random_state=0, logging_level="Silent", verbose=0)
     model.fit(x,y)
-elif model_selector=="Extra Trees":
-    model_c=ExtraTreesRegressor(random_state=0)
+elif model_selector=="Random Forest":
+    model_c=RandomForestRegressor(random_state=0)
     model_c.fit(x, y)
 
 with ic2:
