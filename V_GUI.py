@@ -8,7 +8,7 @@ from catboost import CatBoostRegressor
 from sklearn.ensemble import RandomForestRegressor
 
 url = "https://raw.githubusercontent.com/cakirogl/shear_strength/main/dataset.csv"
-model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "CatBoost", "Extra Trees"])
+model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "CatBoost", "Random Forest"])
 df = pd.read_csv(url);
 x, y = df.iloc[:, :-1], df.iloc[:, -1]
 scaler = MinMaxScaler();
@@ -51,7 +51,7 @@ elif model_selector=="XGBoost":
     model=XGBRegressor(random_state=0)
     model.fit(x, y)
 if model_selector=="CatBoost":
-    model=CatBoostRegressor(random_state=0, logging_level="Silent", verbose=0)
+    model=CatBoostRegressor(random_state=0, logging_level="Silent")
     model.fit(x,y)
 elif model_selector=="Random Forest":
     model_c=RandomForestRegressor(random_state=0)
