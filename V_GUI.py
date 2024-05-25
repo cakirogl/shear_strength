@@ -14,7 +14,8 @@ x, y = df.iloc[:, :-1], df.iloc[:, -1]
 scaler = MinMaxScaler();
 x=scaler.fit_transform(x);
 input_container = st.container()
-ic1,ic2,ic3 = input_container.columns(3)
+#ic1,ic2,ic3 = input_container.columns(3)
+ic1,ic2 = input_container.columns(2)
 FRP_types=["CFRP", "BFRP", "GFRP", "AFRP"]
 with ic1:
     b = st.number_input("**Beam width [mm]:**",min_value=100.0,max_value=400.0,step=10.0,value=200.0)
