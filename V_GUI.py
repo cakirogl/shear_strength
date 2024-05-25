@@ -19,9 +19,9 @@ ic1,ic2 = input_container.columns(2)
 FRP_types=["CFRP", "BFRP", "GFRP", "AFRP"]
 with ic1:
     b = st.number_input("**Beam width [mm]:**",min_value=100.0,max_value=400.0,step=10.0,value=200.0)
-    d = st.number_input("**Beam depth [mm]]:**",min_value=120.0,max_value=1691.0,step = 10.0,value=400.0)
+    d = st.number_input("**Beam depth [mm]:**",min_value=120.0,max_value=1691.0,step = 10.0,value=400.0)
     a_d = st.number_input("**Span to depth ratio**", min_value=0.5, max_value=2.4, step=0.1, value=1.0)
-    fc = st.number_input("**f$_c^{\prime}$ [MPa]]:**", min_value=20.0, max_value=70.0, step=1.0, value=36.0)
+    fc = st.number_input("**f$_c^{\prime}$ [MPa]:**", min_value=20.0, max_value=70.0, step=1.0, value=36.0)
 with ic2:
     rho = st.number_input("**Longitudinal reinf. ratio [\%]:**", min_value=0.26, max_value=2.68, step=0.1, value=1.5)
     Ef = st.number_input("**FRP modulus of elasticity [GPa]:**", min_value=38.0, max_value=150.0, step=1.0, value=50.0)
