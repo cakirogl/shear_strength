@@ -1,4 +1,4 @@
-import pip
+#import pip
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -7,13 +7,15 @@ from xgboost.sklearn import XGBRegressor
 from lightgbm.sklearn import LGBMRegressor
 from catboost import CatBoostRegressor
 from sklearn.ensemble import RandomForestRegressor
-import warnings
-warnings.filterwarnings("ignore", message="numpy.dtype size changed")
-warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
-pip.main(['install', '--upgrade', "numpy"])
+#import warnings
+#warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+#warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
+#pip.main(['install', '--upgrade', "numpy"])
 
 url = "https://raw.githubusercontent.com/cakirogl/shear_strength/main/dataset.csv"
-model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "CatBoost", "Random Forest"])
+#model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "CatBoost", "Random Forest"])
+#Because of an error in streamlit we removed CatBoost
+model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "Random Forest"])
 df = pd.read_csv(url);
 x, y = df.iloc[:, :-1], df.iloc[:, -1]
 scaler = MinMaxScaler();
