@@ -6,6 +6,9 @@ from xgboost.sklearn import XGBRegressor
 from lightgbm.sklearn import LGBMRegressor
 from catboost import CatBoostRegressor
 from sklearn.ensemble import RandomForestRegressor
+import warnings
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
 
 url = "https://raw.githubusercontent.com/cakirogl/shear_strength/main/dataset.csv"
 model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "CatBoost", "Random Forest"])
