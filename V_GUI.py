@@ -1,3 +1,4 @@
+import pip
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -9,6 +10,7 @@ from sklearn.ensemble import RandomForestRegressor
 import warnings
 warnings.filterwarnings("ignore", message="numpy.dtype size changed")
 warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
+pip.main(['install', '--upgrade', "numpy"])
 
 url = "https://raw.githubusercontent.com/cakirogl/shear_strength/main/dataset.csv"
 model_selector = st.selectbox('**Predictive model**', ["XGBoost", "LightGBM", "CatBoost", "Random Forest"])
