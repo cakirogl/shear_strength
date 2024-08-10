@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler, OrdinalEncoder
 from xgboost.sklearn import XGBRegressor
 from lightgbm.sklearn import LGBMRegressor
-from catboost import CatBoostRegressor
+#from catboost import CatBoostRegressor
 from sklearn.ensemble import RandomForestRegressor
 #import warnings
 #warnings.filterwarnings("ignore", message="numpy.dtype size changed")
